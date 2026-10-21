@@ -2,12 +2,16 @@
 <html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Jawad Artisan - الرئيسية</title>
     
+    <!-- خط تجوال -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -52,15 +56,16 @@
         </div>
     </header>
 
-    <!-- الفيديو كيدور بوحدو بلا سكريبت -->
+    <!-- حاوية الفيديو (مصلحة للهاتف) -->
     <div class="video-container">
-        <video id="hero-video" autoplay muted loop playsinline>
+        <video id="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="jawad/logo.png">
             <source src="jawad/v1.mp4" type="video/mp4">
             متصفحك لا يدعم الفيديو.
         </video>
     </div>
 
     <main>
+        <!-- قسم البطاقات (الأقسام) -->
         <div class="container">
             <h2 class="section-title">تصفح أقسامنا</h2>
             <div class="categories">
@@ -94,8 +99,81 @@
                 </a>
             </div>
         </div>
+
+        <!-- قسم المنتجات المميزة (بطاقة المنتج) -->
+        <div class="container" style="padding-top: 0;">
+            <h2 class="section-title">منتجاتنا المميزة</h2>
+            <div class="featured-products">
+                <!-- البطاقة اللي عطيتيني -->
+                <div class="product-card-wrapper">
+                    <div class="bg-custom-card rounded-2xl shadow-lg overflow-hidden w-full border border-amber-200/70 relative transition-all duration-300">
+                        <div class="relative w-full h-48 bg-amber-100/50 overflow-hidden group">
+                            <img id="product-image" src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=800&auto=format&fit=crop" alt="تيشيرت أنيق" class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out" onerror="this.src='https://placehold.co/400x400/fff5e1/73022c?text=صورة+المنتج'">
+                            
+                            <div class="absolute top-2.5 right-2.5 bg-amber-300 text-custom-main font-black text-[10px] px-2 py-0.5 rounded-full shadow-sm flex items-center gap-1 border border-amber-400 z-10">
+                                <i class="fa-solid fa-tag text-[9px]"></i>
+                                <span>#01</span>
+                            </div>
+                            <div class="absolute top-2.5 left-2.5 bg-red-600 text-white font-extrabold text-[9px] px-2 py-0.5 rounded-full shadow-sm badge-pulse z-10">تخفيض -33%</div>
+                        </div>
+
+                        <div class="p-3">
+                            <div class="text-[10px] font-bold text-emerald-700 mb-0.5 flex items-center gap-1">
+                                <i class="fa-solid fa-circle-check text-[8px]"></i>
+                                <span>متوفر في المخزون - توصيل سريع</span>
+                            </div>
+                            <h2 class="text-sm font-extrabold text-custom-main mb-1.5 leading-tight">قميص قطني فاخر عصري (Unisex)</h2>
+                            
+                            <div class="flex items-center gap-1.5 mb-2.5 bg-amber-100/60 p-1.5 rounded-lg border border-amber-200/60">
+                                <span class="text-lg font-black text-custom-main">200 <span class="text-[10px] font-bold">DH</span></span>
+                                <span class="text-[10px] font-semibold text-gray-400 line-through">300 DH</span>
+                                <span class="mr-auto text-[9px] font-extrabold text-red-600 bg-red-100 px-1.5 py-0.5 rounded">وفر 100 DH</span>
+                            </div>
+
+                            <div class="mb-2.5">
+                                <div class="flex justify-between items-center mb-1">
+                                    <label class="text-[11px] font-bold text-custom-main flex items-center gap-1">
+                                        <i class="fa-solid fa-ruler-horizontal text-amber-800/60 text-[10px]"></i> الحجم:
+                                    </label>
+                                    <span id="selected-size-label" class="text-[9px] font-black text-custom-main bg-amber-200/70 px-1.5 py-0.5 rounded">XXL</span>
+                                </div>
+                                <div class="grid grid-cols-5 gap-1" id="sizes-container">
+                                    <button type="button" onclick="selectSize('S')" class="size-btn border rounded-md py-0.5 text-[10px] font-extrabold focus:outline-none">S</button>
+                                    <button type="button" onclick="selectSize('M')" class="size-btn border rounded-md py-0.5 text-[10px] font-extrabold focus:outline-none">M</button>
+                                    <button type="button" onclick="selectSize('L')" class="size-btn border rounded-md py-0.5 text-[10px] font-extrabold focus:outline-none">L</button>
+                                    <button type="button" onclick="selectSize('XL')" class="size-btn border rounded-md py-0.5 text-[10px] font-extrabold focus:outline-none">XL</button>
+                                    <button type="button" onclick="selectSize('XXL')" class="size-btn active border rounded-md py-0.5 text-[10px] font-extrabold focus:outline-none">XXL</button>
+                                </div>
+                            </div>
+
+                            <div class="space-y-1.5 mb-3">
+                                <input type="text" id="cust-name" placeholder="الاسم الكامل" class="w-full text-[10px] px-2.5 py-1.5 rounded-lg border border-amber-200 bg-white/80 focus:bg-white focus:border-custom-main focus:ring-1 focus:ring-[#73022c] outline-none transition-all placeholder:text-gray-400">
+                                <input type="text" id="cust-city" placeholder="المدينة / العنوان" class="w-full text-[10px] px-2.5 py-1.5 rounded-lg border border-amber-200 bg-white/80 focus:bg-white focus:border-custom-main focus:ring-1 focus:ring-[#73022c] outline-none transition-all placeholder:text-gray-400">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-1.5">
+                                <button onclick="sendWhatsAppOrder()" class="btn-whatsapp-original interactive-btn font-extrabold py-2 px-1 rounded-lg flex items-center justify-center gap-1 text-[11px] focus:outline-none">
+                                    <i class="fa-brands fa-whatsapp text-sm"></i>
+                                    <span>طلب الواتساب</span>
+                                </button>
+                                <button onclick="goToDetails()" class="btn-details interactive-btn font-extrabold py-2 px-1 rounded-lg flex items-center justify-center gap-1 text-[11px] focus:outline-none">
+                                    <i class="fa-solid fa-circle-info text-[10px]"></i>
+                                    <span>التفاصيل</span>
+                                </button>
+                            </div>
+
+                            <p class="text-center text-[9px] font-semibold text-amber-900/70 mt-2 flex items-center justify-center gap-1">
+                                <i class="fa-solid fa-truck-fast text-[8px]"></i>
+                                الدفع عند الاستلام والتوصيل لجميع المدن
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
+    <!-- شاحنة التوصيل -->
     <section class="delivery-section">
         <div class="loader">
             <div class="truckWrapper">
@@ -134,5 +212,6 @@
         <p>&copy; 2026 Jawad Artisan. جميع الحقوق محفوظة.</p>
     </footer>
 
+    <script src="script.js"></script>
 </body>
-</html>
+                </html>

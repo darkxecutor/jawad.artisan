@@ -5,15 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jawad Artisan - الرئيسية</title>
 
-    <!-- 1. الفافي كون (الصورة اللي فمجلد jawad) -->
+    <!-- 1. الفافي كون -->
     <link rel="icon" type="image/jpeg" href="jawad/IMG-20261018-WA0006.jpg">
     <link rel="apple-touch-icon" href="jawad/IMG-20261018-WA0006.jpg">
 
-    <!-- 2. لون شريط التاب فالمتصفح (لون عنابي) -->
+    <!-- 2. لون التاب (الطريقة القديمة) -->
     <meta name="theme-color" content="#730022">
     <meta name="msapplication-navbutton-color" content="#730022">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- 3. ملف الويب أب (الطريقة الجديدة والمضمونة لكروم أندرويد) -->
+    <link rel="manifest" href="manifest.json">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -62,9 +65,9 @@
         </div>
     </header>
 
-    <!-- الفيديو كيدور بوحدو بلا سكريبت -->
+    <!-- الفيديو كيف ما كان بالضبط -->
     <div class="video-container">
-        <video id="hero-video" autoplay muted loop playsinline webkit-playsinline preload="auto">
+        <video id="hero-video" autoplay muted loop playsinline>
             <source src="jawad/V1.mp4" type="video/mp4">
             متصفحك لا يدعم الفيديو.
         </video>
@@ -144,7 +147,6 @@
         <p>&copy; 2026 Jawad Artisan. جميع الحقوق محفوظة.</p>
     </footer>
 
-    <!-- استدعاء السكريبت -->
     <script src="script.js"></script>
 </body>
     </html>

@@ -5,23 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jawad Artisan - الرئيسية</title>
 
-    <!-- 1. الفافي كون -->
+    <!-- ✅ Favicon -->
     <link rel="icon" type="image/jpeg" href="jawad/IMG-20261018-WA0006.jpg">
+    <link rel="shortcut icon" type="image/jpeg" href="jawad/IMG-20261018-WA0006.jpg">
     <link rel="apple-touch-icon" href="jawad/IMG-20261018-WA0006.jpg">
 
-    <!-- 2. لون التاب (الطريقة القديمة) -->
+    <!-- ✅ لون تاب المتصفح -->
     <meta name="theme-color" content="#730022">
-    <meta name="msapplication-navbutton-color" content="#730022">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="msapplication-TileColor" content="#730022">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-    <!-- 3. ملف الويب أب (الطريقة الجديدة والمضمونة لكروم أندرويد) -->
-    <link rel="manifest" href="manifest.json">
-    
+    <!-- Google Fonts: Tajawal + Cairo -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (للبطاقات فقط) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Font Awesome (للبطاقات فقط) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- ستايل الموقع + بطاقات المنتجات -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -65,7 +71,7 @@
         </div>
     </header>
 
-    <!-- الفيديو كيف ما كان بالضبط -->
+    <!-- الفيديو -->
     <div class="video-container">
         <video id="hero-video" autoplay muted loop playsinline>
             <source src="jawad/V1.mp4" type="video/mp4">
@@ -74,6 +80,7 @@
     </div>
 
     <main>
+        <!-- ===== الأقسام ===== -->
         <div class="container">
             <h2 class="section-title">تصفح أقسامنا</h2>
             <div class="categories">
@@ -107,6 +114,154 @@
                 </a>
             </div>
         </div>
+
+        <!-- ============================================================ -->
+        <!-- ✅ بطاقات المنتجات -->
+        <!-- ============================================================ -->
+        <section class="products-showcase flex items-center justify-center">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center items-start">
+
+                <!-- ============ البطاقة 1 ============ -->
+                <div class="temu-card bg-custom-card rounded-xl shadow-md overflow-hidden w-full max-w-[200px] border border-amber-200/70 relative"
+                     data-card data-product-id="#01" data-product-price="200 DH">
+
+                    <div class="relative w-full h-36 bg-amber-100/50 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=400&auto=format&fit=crop"
+                             alt="تيشيرت" class="product-img w-full h-full object-cover object-center"
+                             onerror="this.src='https://placehold.co/200x200/fff5e1/73022c?text=صورة+المنتج'">
+                        <div class="img-shine"></div>
+
+                        <div class="absolute top-1.5 right-1.5 bg-amber-300 text-custom-main font-black text-[9px] px-1.5 py-0.5 rounded-full shadow-sm flex items-center gap-0.5 border border-amber-400 z-10">
+                            <i class="fa-solid fa-tag text-[8px]"></i><span>#01</span>
+                        </div>
+                        <div class="discount-badge absolute top-1.5 left-1.5 bg-red-600 text-white font-extrabold text-[8px] px-1.5 py-0.5 rounded-full shadow-sm z-10">
+                            -33%
+                        </div>
+                    </div>
+
+                    <div class="p-2.5">
+                        <div class="text-[8px] font-bold text-emerald-700 mb-0.5 flex items-center gap-1">
+                            <i class="fa-solid fa-circle-check text-[7px]"></i><span>متوفر - توصيل سريع</span>
+                        </div>
+
+                        <h2 class="text-[11px] font-extrabold text-custom-main mb-1 leading-tight">
+                            قميص قطني فاخر عصري (Unisex)
+                        </h2>
+
+                        <div class="price-box flex items-center gap-1 mb-2 bg-amber-100/60 p-1 rounded-lg border border-amber-200/60">
+                            <span class="text-base font-black text-custom-main">200 <span class="text-[9px] font-bold">DH</span></span>
+                            <span class="text-[9px] font-semibold text-gray-400 line-through">300 DH</span>
+                            <span class="mr-auto text-[8px] font-extrabold text-red-600 bg-red-100 px-1 py-0.5 rounded">وفر 100</span>
+                        </div>
+
+                        <div class="mb-2">
+                            <div class="flex justify-between items-center mb-0.5">
+                                <label class="text-[9px] font-bold text-custom-main flex items-center gap-0.5">
+                                    <i class="fa-solid fa-ruler-horizontal text-amber-800/60 text-[8px]"></i>الحجم:
+                                </label>
+                                <span class="selected-size-label text-[8px] font-black text-custom-main bg-amber-200/70 px-1 py-0.5 rounded">XXL</span>
+                            </div>
+                            <div class="grid grid-cols-5 gap-0.5">
+                                <button type="button" class="size-btn border rounded-md py-0.5 text-[8px] font-extrabold focus:outline-none" data-size="S">S</button>
+                                <button type="button" class="size-btn border rounded-md py-0.5 text-[8px] font-extrabold focus:outline-none" data-size="M">M</button>
+                                <button type="button" class="size-btn border rounded-md py-0.5 text-[8px] font-extrabold focus:outline-none" data-size="L">L</button>
+                                <button type="button" class="size-btn border rounded-md py-0.5 text-[8px] font-extrabold focus:outline-none" data-size="XL">XL</button>
+                                <button type="button" class="size-btn border rounded-md py-0.5 text-[8px] font-extrabold focus:outline-none active" data-size="XXL">XXL</button>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1 mb-2">
+                            <input type="text" class="name-input type-crack w-full text-[9px] px-2 py-1 rounded-md border border-amber-200 bg-white/80 focus:bg-white outline-none transition-all placeholder:text-gray-400" placeholder="الاسم الكامل">
+                            <input type="text" class="city-input type-crack w-full text-[9px] px-2 py-1 rounded-md border border-amber-200 bg-white/80 focus:bg-white outline-none transition-all placeholder:text-gray-400" placeholder="المدينة / العنوان">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-1">
+                            <button onclick="sendWhatsAppOrder(this)" class="btn-whatsapp-original interactive-btn font-extrabold py-1.5 px-0.5 rounded-md flex items-center justify-center gap-0.5 text-[9px] focus:outline-none">
+                                <i class="fa-brands fa-whatsapp text-[11px]"></i><span>واتساب</span>
+                            </button>
+                            <button onclick="goToDetails()" class="btn-details interactive-btn font-extrabold py-1.5 px-0.5 rounded-md flex items-center justify-center gap-0.5 text-[9px] focus:outline-none">
+                                <i class="fa-solid fa-circle-info text-[9px]"></i><span>التفاصيل</span>
+                            </button>
+                        </div>
+
+                        <p class="text-center text-[7px] font-semibold text-amber-900/70 mt-1.5 flex items-center justify-center gap-0.5">
+                            <i class="fa-solid fa-truck-fast text-[7px]"></i>الدفع عند الاستلام
+                        </p>
+                    </div>
+                </div>
+
+                <!-- ============ البطاقة 2 ============ -->
+                <div class="temu-card bg-custom-card rounded-xl shadow-md overflow-hidden w-full max-w-[200px] border border-amber-200/70 relative"
+                     data-card data-product-id="#02" data-product-price="280 DH">
+
+                    <div class="relative w-full h-36 bg-amber-100/50 overflow-hidden group">
+                        <img src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=400&auto=format&fit=crop"
+                             alt="هودي" class="product-img w-full h-full object-cover object-center"
+                             onerror="this.src='https://placehold.co/200x200/fff5e1/73022c?text=صورة+المنتج'">
+                        <div class="img-shine"></div>
+
+                        <div class="absolute top-1.5 right-1.5 bg-amber-300 text-custom-main font-black text-[9px] px-1.5 py-0.5 rounded-full shadow-sm flex items-center gap-0.5 border border-amber-400 z-10">
+                            <i class="fa-solid fa-tag text-[8px]"></i><span>#02</span>
+                        </div>
+                        <div class="discount-badge absolute top-1.5 left-1.5 bg-red-600 text-white font-extrabold text-[8px] px-1.5 py-0.5 rounded-full shadow-sm z-10">
+                            -20%
+                        </div>
+                    </div>
+
+                    <div class="p-2.5">
+                        <div class="text-[8px] font-bold text-emerald-700 mb-0.5 flex items-center gap-1">
+                            <i class="fa-solid fa-circle-check text-[7px]"></i><span>متوفر - توصيل سريع</span>
+                        </div>
+
+                        <h2 class="text-[11px] font-extrabold text-custom-main mb-1 leading-tight">
+                            هودي شتوي دافئ مبطن
+                        </h2>
+
+                        <div class="price-box flex items-center gap-1 mb-2 bg-amber-100/60 p-1 rounded-lg border border-amber-200/60">
+                            <span class="text-base font-black text-custom-main">280 <span class="text-[9px] font-bold">DH</span></span>
+                            <span class="text-[9px] font-semibold text-gray-400 line-through">350 DH</span>
+                            <span class="mr-auto text-[8px] font-extrabold text-red-600 bg-red-100 px-1 py-0.5 rounded">وفر 70</span>
+                        </div>
+
+                        <div class="mb-2">
+                            <div class="flex justify-between items-center mb-0.5">
+                                <label class="text-[9px] font-bold text-custom-main flex items-center gap-0.5">
+                                    <i class="fa-solid fa-ruler-horizontal text-amber-800/60 text-[8px]"></i>الحجم:
+                                </label>
+                                <span class="selected-size-label text-[8px] font-black text-custom-main bg-amber-200/70 px-1 py-0.5 rounded">L</span>
+                            </div>
+                            <div class="grid grid-cols-5 gap-0.5">
+                                <button type="button" class="size-btn border rounded-md py-0.5 text-[8px] font-extrabold focus:outline-none" data-size="S">S</button>
+                                <button type="button" class="size-btn border rounded-md py-0.5 text-[8px] font-extrabold focus:outline-none" data-size="M">M</button>
+                                <button type="button" class="size-btn border rounded-md py-0.5 text-[8px] font-extrabold focus:outline-none active" data-size="L">L</button>
+                                <button type="button" class="size-btn border rounded-md py-0.5 text-[8px] font-extrabold focus:outline-none" data-size="XL">XL</button>
+                                <button type="button" class="size-btn border rounded-md py-0.5 text-[8px] font-extrabold focus:outline-none" data-size="XXL">XXL</button>
+                            </div>
+                        </div>
+
+                        <div class="space-y-1 mb-2">
+                            <input type="text" class="name-input type-crack w-full text-[9px] px-2 py-1 rounded-md border border-amber-200 bg-white/80 focus:bg-white outline-none transition-all placeholder:text-gray-400" placeholder="الاسم الكامل">
+                            <input type="text" class="city-input type-crack w-full text-[9px] px-2 py-1 rounded-md border border-amber-200 bg-white/80 focus:bg-white outline-none transition-all placeholder:text-gray-400" placeholder="المدينة / العنوان">
+                        </div>
+
+                        <div class="grid grid-cols-2 gap-1">
+                            <button onclick="sendWhatsAppOrder(this)" class="btn-whatsapp-original interactive-btn font-extrabold py-1.5 px-0.5 rounded-md flex items-center justify-center gap-0.5 text-[9px] focus:outline-none">
+                                <i class="fa-brands fa-whatsapp text-[11px]"></i><span>واتساب</span>
+                            </button>
+                            <button onclick="goToDetails()" class="btn-details interactive-btn font-extrabold py-1.5 px-0.5 rounded-md flex items-center justify-center gap-0.5 text-[9px] focus:outline-none">
+                                <i class="fa-solid fa-circle-info text-[9px]"></i><span>التفاصيل</span>
+                            </button>
+                        </div>
+
+                        <p class="text-center text-[7px] font-semibold text-amber-900/70 mt-1.5 flex items-center justify-center gap-0.5">
+                            <i class="fa-solid fa-truck-fast text-[7px]"></i>الدفع عند الاستلام
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
     </main>
 
     <section class="delivery-section">
@@ -147,6 +302,8 @@
         <p>&copy; 2026 Jawad Artisan. جميع الحقوق محفوظة.</p>
     </footer>
 
+    <!-- ✅ سكريبت الموقع -->
     <script src="script.js"></script>
+
 </body>
-    </html>
+</html>
